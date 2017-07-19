@@ -10,18 +10,22 @@
 	<div class="row">
 		<div class="wrap-login col-md-4 col-md-offset-4">
 			<h2>Register</h2>
-			<form>
+			<form method="post" action="/register">
 			  <div class="form-group">
-			    <label for="exampleInputEmail1">Email address</label>
-			    <input type="email" class="form-control" id="" placeholder="Email">
+			    <label for="name">First Name</label>
+			    <input type="name" name="name" class="form-control" placeholder="Joanne">
 			  </div>
 			  <div class="form-group">
-			    <label for="exampleInputPassword1">Password</label>
-			    <input type="password" class="form-control" id="" placeholder="Password">
+			    <label for="email">Email address</label>
+			    <input type="email" name="email" class="form-control" placeholder="email@email.com">
 			  </div>
 			  <div class="form-group">
-			    <label for="exampleInputPassword1">Confirm Password</label>
-			    <input type="password" class="form-control" id="" placeholder="Confirm Password">
+			    <label for="password">Password</label>
+			    <input type="password" name="password" class="form-control" placeholder="password">
+			  </div>
+			  <div class="form-group">
+			    <label for="confirmPassword">Confirm Password</label>
+			    <input type="password" name="confirmPassword" class="form-control" placeholder="confirm password">
 			  </div>
 			  <input type="submit" class="btn-login btn btn-default"></input>
 			</form>
