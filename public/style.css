@@ -1,11 +1,51 @@
 .container-fluid {
 	margin: auto;
-	margin-top: 10%;
+	/*margin-top: 10%;*/
 	margin-bottom: 5%;
 	width: 400px;
 }
 
-.form {
-	margin-top: 3em;
+.search {
+	margin-top: 20px;
 	text-align: center
+}
+
+/*.login-header {
+	margin-top: 55px;
+}
+
+.search-header {
+	font-size: 20px;
+}*/
+
+h1 {
+	font-family: 'Sigmar One', cursive;
+	margin-top: 55px;
+}
+
+h2 {
+	margin-bottom: 30px;
+}
+
+body {
+	background-color: #f8f8f8;
+}
+
+.wrap-login {
+	padding: 20px;
+	padding-bottom: 30px;
+	margin-top: 30px;
+	background-color: #fff;
+	border: solid 1px #d0d0d0;
+	-webkit-box-shadow: -7px 5px 25px -4px rgba(0,0,0,0.54);
+	-moz-box-shadow: -7px 5px 25px -4px rgba(0,0,0,0.54);
+	box-shadow: -7px 5px 25px -4px rgba(0,0,0,0.54);
+}
+
+.btn {
+	background-color: #DCDCDC;
+}
+
+.btn-login {
+	margin-top: 10px;
 }
