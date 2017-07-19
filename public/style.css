@@ -1,0 +1,11 @@
+.container-fluid {
+	margin: auto;
+	margin-top: 10%;
+	margin-bottom: 5%;
+	width: 400px;
+}
+
+.form {
+	margin-top: 3em;
+	text-align: center
+}

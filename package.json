@@ -1,0 +1,33 @@
+{
+  "name": "movie-search-engine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pporche87/movie-search-engine.git"
+  },
+  "author": "Patrick Porche <pporche87@gmail.com> (http://pporche87.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pporche87/movie-search-engine/issues"
+  },
+  "homepage": "https://github.com/pporche87/movie-search-engine#readme",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.2",
+    "ejs": "^2.5.6",
+    "express": "^4.15.3",
+    "normalize.css": "^7.0.0",
+    "pg-promise": "^6.3.5"
+  },
+  "devDependencies": {
+    "eslint": "^4.2.0",
+    "eslint-plugin-react": "^7.1.0",
+    "nodemon": "^1.11.0"
+  }
+}
