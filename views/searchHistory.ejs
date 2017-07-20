@@ -1,0 +1,23 @@
+<% include ./partials/header %>
+
+
+<h1 class="text-center search-header">Search History</h1>
+<div class="container search-results">
+	<div class="col-md-6 col-md-offset-3">
+		<table class="table table-bordered">
+			<tr>
+				<th>Search Term</th>
+				<th>Date</th>
+			</tr>
+			<% searchHist.forEach(function(term) { %>
+			<tr>
+				<td><%= term.search_term %></td>
+				<td><%= moment(term.search_date).format('YYYY-MM-DD') %></td>
+			</tr>
+			<% }) %>
+		</table>
+
+	</div>
+</div>
+
+<% include ./partials/footer %>
