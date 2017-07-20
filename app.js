@@ -9,6 +9,7 @@ const User = require('./database/user')
 const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy
 const bcrypt = require('bcrypt')
+const { movieSearch } = require('./movie-search.js')
 
 const app = express()
 
@@ -17,35 +18,9 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(cookieParser())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(session({ secret: 'keyboard cat' }))
-// app.use(passport.initialize())
-// app.use(passport.session())
-// app.use(flash())
 
 app.set('view engine', 'ejs')
-
-
-// passport.use(new LocalStrategy((email, password, done) => {
-// 	console.log(email, password);
-// 	User.findUserByEmail(email).then(user => {
-// 		if (!user) {
-// 			return done(null, false, { message: 'Incorrect email' })
-// 		}
-// 		if (!User.isValidPassword(user, password)) {
-// 			return done(null, false, { message: 'Incorrect password' })
-// 		}
-// 		return done(null, user)
-// 	})
-// }))
-//
-// passport.serializeUser((user, done) => {
-// 	done(null, user.id)
-// })
-//
-// passport.deserializeUser((id, done) => {
-// 	User.findUserById(id).then(user => {
-// 		done(null, user)
-// 	})
-// })
+app.locals.moment = require('moment')
 
 app.get('/', (req, res) => {
 		res.render('index.ejs')
@@ -56,9 +31,6 @@ app.route('/login')
 		console.log(req.session.user);
 		res.render('login.ejs', { data: req.session.user })
 	})
-	// .post(passport.authenticate('local', (req, res) => {
-	// 	res.redirect('/')
-	// }))
 	.post((req, res) => {
 		const plainTxtPassword = req.body.password
 		User.findUserByEmail(req.body.email)
@@ -90,6 +62,29 @@ app.route('/register')
 			console.log(error)
 		})
 	})
+
+app.post('/search', (req, res) => {
+	const searchQuery = req.body.search
+	User.createSearchHist(req.session.userid, searchQuery)
+	movieSearch(searchQuery)
+	.then(movieNames => {
+		res.render('searchResults', { searchQuery: searchQuery, movieNames: movieNames })
+	})
+	.catch((error) => {
+		console.log(error)
+	})
+})
+
+app.get('/history', (req, res) => {
+	const output = {
+		searchTerm: [],
+		searchDate: []
+	}
+	User.findSearchHist(req.session.userid).then(searchData => {
+		const searchHist = searchData
+		res.render('searchHistory', { searchHist: searchHist })
+	})
+})
 
 const port = 3000
 

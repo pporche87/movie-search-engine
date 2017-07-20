@@ -21,6 +21,18 @@ const findUserById = id => {
 	return db.one(queries.findById(), [id])
 }
 
+const createSearchHist = (user_id, search_term) => {
+	return db.none(queries.saveSearchById(), [user_id, search_term])
+}
+
+const findSearchHist = (user_id) => {
+	return db.any(queries.findSearchHist(), [user_id])
+}
+
+// const findSearchDates = (user_id) => {
+// 	return db.any(queries.findSearchDateById(), [user_id])
+// }
+
 // const authPassword = (user, password) => {
 // 	new Promise((resolve, reject) => {
 // 		bcrypt.compare(password, user.password, (error) => {
@@ -34,6 +46,9 @@ module.exports = {
 	// isValidPassword,
 	createUser,
 	findUserByEmail,
-	findUserById
+	findUserById,
+	createSearchHist,
+	findSearchHist
+	// findSearchDates
 	// authPassword
 }

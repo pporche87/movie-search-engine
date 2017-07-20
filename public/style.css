@@ -10,14 +10,6 @@
 	text-align: center
 }
 
-/*.login-header {
-	margin-top: 55px;
-}
-
-.search-header {
-	font-size: 20px;
-}*/
-
 h1 {
 	font-family: 'Sigmar One', cursive;
 	margin-top: 55px;
@@ -48,4 +40,14 @@ body {
 
 .btn-login {
 	margin-top: 10px;
+}
+
+.media {
+	border: solid 1px #d0d0d0;
+	padding: 15px;
+}
+
+.search-results {
+	margin-top: 30px;
+
 }
