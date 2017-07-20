@@ -11,4 +11,27 @@
 		</form>
 </div>
 
+<% if (searchQuery.length > 0) { %>
+
+	<h4 class="text-center search-header">Search Results for "<%= searchQuery %>"</h4>
+
+	<div class="container results">
+
+		<div class="col-md-6 col-md-offset-3">
+			<ul class="media-list">
+				<% movieNames.movies.forEach(function(movie) { %>
+					<li class="media">
+						<div class="media-left">
+							<img class="media-object" src="<%= movie.image %>" alt="">
+						</div>
+						<div class="media-body">
+							<h4 class="media-heading"><%= movie.name %></h4>
+						</div>
+					</li>
+				<% }) %>
+			</ul>
+		</div>
+	</div>
+<% } %>
+
 <% include ./partials/footer %>

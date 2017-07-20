@@ -35,7 +35,7 @@ const queries = {
 			SELECT search_term, search_date
 			FROM queries
 			WHERE user_id=$1
-			ORDER BY search_date ASC
+			ORDER BY search_date DESC
 		`
 	},
 }

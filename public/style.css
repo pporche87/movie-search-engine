@@ -1,7 +1,7 @@
 .container-fluid {
 	margin: auto;
 	/*margin-top: 10%;*/
-	margin-bottom: 5%;
+	margin-bottom: 2%;
 	width: 400px;
 }
 
@@ -50,4 +50,8 @@ body {
 .search-results {
 	margin-top: 30px;
 
+}
+
+.results {
+	margin-top: 2%;
 }

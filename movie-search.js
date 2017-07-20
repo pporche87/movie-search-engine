@@ -36,7 +36,7 @@ const movieSearch = search => {
 				movieObject.image = movieImages[i]
 				output.movies.push(movieObject)
 			}
-			return output 
+			return output
 		})
 		.catch((error) => {
 			console.log(error)
